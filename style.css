@@ -1,0 +1,281 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+    height: 100vh;
+    background: #f5efe6;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* scroll tylko w prawej kolumnie */
+}
+
+/* ========================= */
+/* GŁÓWNY UKŁAD – FLEXBOX */
+/* ========================= */
+
+.container {
+    display: flex;
+    width: 95%;
+    max-width: 1400px;
+    height: 100vh;
+}
+
+/* ========================= */
+/* LEWA KOLUMNA */
+/* ========================= */
+
+.sidebar {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    color: #f5efe6;
+
+    background:
+            linear-gradient(rgba(92, 64, 51, 0.85), rgba(92, 64, 51, 0.85)),
+            url("https://a.allegroimg.com/original/110f3e/5fe20487445697be3c0223a49ce7/TAPETA-MOTYW-ZWIERZECY-JASNE-CETKI-PANTERKA-5135al");
+    background-size: cover;
+    background-position: center;
+}
+
+/* LOGO */
+
+.logo {
+    background: #a47148;
+    color: white;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* NAWIGACJA */
+/* ========================= */
+
+.menu {
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* GŁÓWNE LINKI */
+
+.menu > li > .main-link {
+    background-color: #a47148;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.menu > li > .main-link:hover {
+    background-color: #7a5234;
+}
+
+/* PODKATEGORIE */
+
+.submenu {
+    display: none;
+    list-style: none;
+}
+
+.submenu .sub-link {
+    background-color: #e6ccb2;
+    color: #3e2c23;
+    padding-left: 35px;
+    margin-bottom: 5px;
+}
+
+.submenu .sub-link:hover {
+    background-color: #d2b48c;
+}
+
+/* ROZWIJANIE */
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* ========================= */
+/* PRAWA KOLUMNA */
+/* ========================= */
+
+.content {
+    flex: 3;
+    background: #fdf6ec;
+    overflow-y: auto;
+}
+
+/* ========================= */
+/* GÓRNY PASEK (jak na screenie) */
+/* ========================= */
+
+.top-bar {
+    background: #8b5e3c;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* TREŚĆ – PADDING */
+/* ========================= */
+
+.text-columns,
+.grid-section,
+table,
+.buttons,
+.extra-content,
+footer {
+    padding: 20px;
+}
+
+/* ========================= */
+/* GRID – 2 KOLUMNY */
+/* ========================= */
+
+.text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* GRID – 4 ELEMENTY */
+
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grid-section h2 {
+    border-bottom: 2px solid #8b5e3c;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+/* ========================= */
+/* TABELA */
+/* ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+thead {
+    background: #8b5e3c;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background: #f0e2d0;
+}
+
+/* ========================= */
+/* PRZYCISKI – FLEXBOX */
+/* ========================= */
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: #a47148;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #7a5234;
+}
+
+/* ========================= */
+/* STOPKA – GRID */
+/* ========================= */
+
+footer {
+    background: #5c4033;
+    color: #f5efe6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer .copyright {
+    grid-column: span 3;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 10px;
+}
+
+/* ========================= */
+/* RESPONSYWNOŚĆ */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .text-columns,
+    .grid-section {
+        grid-template-columns: 1fr;
+    }
+}
