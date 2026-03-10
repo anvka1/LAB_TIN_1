@@ -1,17 +1,9 @@
-/* ========================= */
-/* RESET */
-/* ========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
-/* ========================= */
-/* BODY */
-/* ========================= */
 
 body {
     height: 100vh;
@@ -21,20 +13,12 @@ body {
     overflow: hidden; /* scroll tylko w prawej kolumnie */
 }
 
-/* ========================= */
-/* GŁÓWNY UKŁAD – FLEXBOX */
-/* ========================= */
-
 .container {
     display: flex;
     width: 95%;
     max-width: 1400px;
     height: 100vh;
 }
-
-/* ========================= */
-/* LEWA KOLUMNA */
-/* ========================= */
 
 .sidebar {
     flex: 1;
@@ -49,7 +33,6 @@ body {
     background-position: center;
 }
 
-/* LOGO */
 
 .logo {
     background: #a47148;
@@ -64,10 +47,6 @@ body {
     font-weight: bold;
 }
 
-/* ========================= */
-/* NAWIGACJA */
-/* ========================= */
-
 .menu {
     list-style: none;
 }
@@ -81,7 +60,6 @@ body {
     transition: 0.3s;
 }
 
-/* GŁÓWNE LINKI */
 
 .menu > li > .main-link {
     background-color: #a47148;
@@ -93,8 +71,6 @@ body {
 .menu > li > .main-link:hover {
     background-color: #7a5234;
 }
-
-/* PODKATEGORIE */
 
 .submenu {
     display: none;
@@ -112,15 +88,9 @@ body {
     background-color: #d2b48c;
 }
 
-/* ROZWIJANIE */
-
 .has-submenu:hover .submenu {
     display: block;
 }
-
-/* ========================= */
-/* PRAWA KOLUMNA */
-/* ========================= */
 
 .content {
     flex: 3;
@@ -128,9 +98,7 @@ body {
     overflow-y: auto;
 }
 
-/* ========================= */
-/* GÓRNY PASEK (jak na screenie) */
-/* ========================= */
+/*górny pasek*/
 
 .top-bar {
     background: #8b5e3c;
@@ -148,11 +116,6 @@ body {
     font-size: 28px;
     font-weight: bold;
 }
-
-/* ========================= */
-/* TREŚĆ – PADDING */
-/* ========================= */
-
 .text-columns,
 .grid-section,
 table,
@@ -162,17 +125,11 @@ footer {
     padding: 20px;
 }
 
-/* ========================= */
-/* GRID – 2 KOLUMNY */
-/* ========================= */
-
 .text-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-
-/* GRID – 4 ELEMENTY */
 
 .grid-section {
     display: grid;
@@ -185,10 +142,6 @@ footer {
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
-
-/* ========================= */
-/* TABELA */
-/* ========================= */
 
 table {
     width: 100%;
@@ -209,10 +162,6 @@ th, td {
 tbody tr:nth-child(even) {
     background: #f0e2d0;
 }
-
-/* ========================= */
-/* PRZYCISKI – FLEXBOX */
-/* ========================= */
 
 .buttons {
     display: flex;
@@ -235,10 +184,6 @@ tbody tr:nth-child(even) {
     background: #7a5234;
 }
 
-/* ========================= */
-/* STOPKA – GRID */
-/* ========================= */
-
 footer {
     background: #5c4033;
     color: #f5efe6;
@@ -257,25 +202,4 @@ footer .copyright {
     margin-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.3);
     padding-top: 10px;
-}
-
-/* ========================= */
-/* RESPONSYWNOŚĆ */
-/* ========================= */
-
-@media (max-width: 768px) {
-
-    body {
-        overflow: auto;
-    }
-
-    .container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .text-columns,
-    .grid-section {
-        grid-template-columns: 1fr;
-    }
 }
